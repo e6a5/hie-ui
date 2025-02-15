@@ -1,3 +1,5 @@
+"use client"
+import React from "react"
 import type { BaseProps } from "@/lib/types"
 import { cn } from "@/lib/utils"
 

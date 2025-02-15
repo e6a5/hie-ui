@@ -1,3 +1,5 @@
+"use client"
+import React from "react"
 import type { BaseProps, GridColumns } from "@/lib/types"
 import { cn } from "@/lib/utils"
 

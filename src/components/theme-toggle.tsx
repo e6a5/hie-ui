@@ -1,10 +1,16 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { Moon, Sun } from "lucide-react"
+import React from "react"
 import { Button } from "./button"
+import type { BaseProps } from "@/lib/types"
 
-export function ThemeToggle() {
+interface ThemeToggleProps extends BaseProps {
+  lightIcon: React.ReactNode
+  darkIcon: React.ReactNode
+}
+
+export function ThemeToggle({ lightIcon, darkIcon }: ThemeToggleProps) {
   const [theme, setTheme] = useState<"light" | "dark">("light")
 
   useEffect(() => {
@@ -20,8 +26,7 @@ export function ThemeToggle() {
 
   return (
     <Button variant="text" onClick={toggleTheme} ariaLabel={`Switch to ${theme === "light" ? "dark" : "light"} theme`}>
-      {theme === "light" ? <Moon className="h-5 w-5" /> : <Sun className="h-5 w-5" />}
+      {theme === "light" ? lightIcon : darkIcon}
     </Button>
   )
 }
-
